@@ -19,10 +19,6 @@ modelNames.forEach(async (modelName) => {
     original[modelName] = functions[modelName](original.sequelize, Sequelize)
     target[modelName] = functions[modelName](target.sequelize, Sequelize)
 })
-modelNames.forEach((modelName) => {
-    original[modelName].associate(original)
-    target[modelName].associate(target)
-})
 await target.sequelize.sync({})
 console.log("Initialized.")
 
