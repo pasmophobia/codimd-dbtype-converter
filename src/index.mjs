@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import {User, Note, Revision, Author} from "./models.mjs";
+import * as fs from "node:fs";
 
 // Initialization
 console.log("codimd-dbtype-converter (c) 2024 pasmophobia")
