@@ -25,6 +25,10 @@ export function Author(sequelize, DataTypes) {
         ]
     })
 }
+
+// permission types
+const permissionTypes = ['freely', 'editable', 'limited', 'locked', 'protected', 'private']
+
 export function Note(sequelize, DataTypes) {
     return sequelize.define('Note', {
         id: {
@@ -36,7 +40,6 @@ export function Note(sequelize, DataTypes) {
             type: DataTypes.STRING,
             unique: true,
             allowNull: false,
-            defaultValue: shortId.generate
         },
         alias: {
             type: DataTypes.STRING,

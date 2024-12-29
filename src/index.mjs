@@ -8,6 +8,20 @@ const original = {}
 const target = {}
 original.sequelize = new Sequelize(process.env.CMD_CONVERT_ORIGINAL_DB_URL);
 target.sequelize = new Sequelize(process.env.CMD_CONVERT_TARGET_DB_URL);
+function stripNullByte (value) {
+    value = '' + value
+    // eslint-disable-next-line no-control-regex
+    return value ? value.replace(/\u0000/g, '') : value
+}
+original.sequelize.stripNullByte = stripNullByte
+target.sequelize.stripNullByte = stripNullByte
+function processData (data, _default, process) {
+    if (data === undefined) return data
+    else return data === null ? _default : (process ? process(data) : data)
+}
+original.sequelize.processData = processData
+target.sequelize.processData = processData
+sequelize.processData = processData
 const modelNames = ['User', 'Note', 'Revision', 'Author'];
 const functions = {
     User: User,
