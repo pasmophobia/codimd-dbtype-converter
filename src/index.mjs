@@ -30,7 +30,7 @@ await target.sequelize.sync()
 console.log("Initialized.")
 
 // Conversion
-for(const modelName in modelNames) {
+for(const modelName of modelNames) {
     console.log(`converting ${modelName}.`)
     const data = await original[modelName].findAll()
     await target[modelName].bulkCreate(data)
