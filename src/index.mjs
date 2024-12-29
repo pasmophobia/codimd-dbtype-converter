@@ -1,8 +1,8 @@
-const { Sequelize } = require('sequelize');
-const user = require('codimd/lib/models/user');
-const note = require('codimd/lib/models/note');
-const revision = require('codimd/lib/models/revision');
-const author = require('codimd/lib/models/author');
+import { Sequelize} from "sequelize";
+import user from "codimd/lib/models/user.js";
+import note from "codimd/lib/models/note.js";
+import revision from "codimd/lib/models/revision.js";
+import author from "codimd/lib/models/author.js";
 
 // Initialization
 console.log("codimd-dbtype-converter (c) 2024 pasmophobia")

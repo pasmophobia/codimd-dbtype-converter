@@ -1,10 +1,10 @@
 {
   "name": "codimd-dbtype-converter",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "src/index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "start": "node src/index.mjs"
   },
   "author": "pasmophobia",
   "license": "GPL-3.0",
