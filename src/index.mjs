@@ -21,7 +21,6 @@ function processData (data, _default, process) {
 }
 original.sequelize.processData = processData
 target.sequelize.processData = processData
-sequelize.processData = processData
 const modelNames = ['User', 'Note', 'Revision', 'Author'];
 const functions = {
     User: User,
