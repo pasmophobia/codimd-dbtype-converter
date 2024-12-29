@@ -13,8 +13,8 @@ original.sequelize = new Sequelize(process.env.CMD_CONVERT_ORIGINAL_DB_URL);
 target.sequelize = new Sequelize(process.env.CMD_CONVERT_TARGET_DB_URL);
 const modelNames = ['User', 'Note', 'Revision', 'Author'];
 modelNames.forEach(async (modelName) => {
-    original[modelName] = import(`codimd/lib/models/${modelName}.js`)(original.sequelize, Sequelize)
-    target[modelName] = import(`codimd/lib/models/${modelName}.js`)(target.sequelize, Sequelize)
+    original[modelName] = import(`codimd/lib/models/${modelName.toLowerCase()}.js`)(original.sequelize, Sequelize)
+    target[modelName] = import(`codimd/lib/models/${modelName.toLowerCase()}.js`)(target.sequelize, Sequelize)
 })
 modelNames.forEach((modelName) => {
     original[modelName].associate(original)
