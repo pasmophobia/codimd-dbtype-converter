@@ -158,7 +158,7 @@ export function User(sequelize, DataTypes) {
             type: DataTypes.TEXT
         },
         history: {
-            type: DataTypes.TEXT
+            type: DataTypes.TEXT('long')
         },
         accessToken: {
             type: DataTypes.TEXT
