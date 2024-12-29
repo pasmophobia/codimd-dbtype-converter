@@ -1,4 +1,4 @@
-import { Sequelize} from "sequelize";
+import { Sequelize } from "sequelize";
 import user from "codimd/lib/models/user.js";
 import note from "codimd/lib/models/note.js";
 import revision from "codimd/lib/models/revision.js";
@@ -19,6 +19,8 @@ original.revision = revision(original.sequelize, Sequelize);
 target.revision = revision(target.sequelize, Sequelize);
 original.author = author(original.sequelize, Sequelize);
 target.author = author(target.sequelize, Sequelize);
+
+await target.sequelize.sync()
 console.log("Initialized.")
 
 // Conversion
