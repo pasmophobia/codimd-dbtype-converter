@@ -1,0 +1,19 @@
+{
+  "name": "codimd-dbtype-converter",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node src/index.js"
+  },
+  "author": "pasmophobia",
+  "license": "GPL-3.0",
+  "description": "",
+  "dependencies": {
+    "codimd": "github:hackmdio/codimd",
+    "mariadb": "^3.4.0",
+    "pg": "^8.13.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.5"
+  }
+}
