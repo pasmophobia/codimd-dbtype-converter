@@ -23,43 +23,24 @@ console.log("Initialized.")
 
 // Conversion
 console.log("converting users.")
-original.user.findAll().then(users => {
-    console.log("found users.")
-    users.forEach((user,index) => {
-        console.log(`converting user ${index}/${users.length}.`)
-        target.user.create(user)
-    })
-})
+const users = await original.user.findAll()
+await target.user.bulkCreate(users)
 console.log("converted users.")
 
 console.log("converting notes.")
-original.note.findAll().then(notes => {
-    console.log("found notes.")
-    notes.forEach((note,index) => {
-        console.log(`converting note ${index}/${notes.length}.`)
-        target.note.create(note)
-    })
-})
+const notes = await original.note.findAll()
+await target.note.bulkCreate(notes)
 console.log("converted notes.")
 
 console.log("converting revisions.")
-original.revision.findAll().then(revisions => {
-    console.log("found revisions.")
-    revisions.forEach((revision,index) => {
-        console.log(`converting revision ${index}/${revisions.length}.`)
-        target.revision.create(revision)
-    })
-})
+
+const revisions = await original.revision.findAll()
+await target.revision.bulkCreate(revisions)
 console.log("converted revisions.")
 
 console.log("converting authors.")
-original.author.findAll().then(authors => {
-    console.log("found authors.")
-    authors.forEach((author,index) => {
-        console.log(`converting author ${index}/${authors.length}.`)
-        target.author.create(author)
-    })
-})
+const authors = await original.author.findAll()
+await target.author.bulkCreate(authors)
 console.log("converted authors.")
 
 console.log("Conversion complete.")
